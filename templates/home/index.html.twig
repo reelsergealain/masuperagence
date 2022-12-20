@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcomme
+{% endblock %}
+
+{% block body %}
+	<h1 class="my-5 text-center display-5">Are you facing any <span class="text-danger">issus</span> 😔</h1>
+        <div class="col-md-6 mx-auto">
+           {{ form_start(form) }}
+           {{ form_widget(form) }}
+           <button class="btn btn-primary btn-block" formnovalidate type="submit">Send</button>
+           {{ form_end(form) }}
+        </div>
+	{% endblock %}

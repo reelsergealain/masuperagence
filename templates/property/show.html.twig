@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title property.title %}
+
+{% block body %}
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1></h1>
+        </div>
+        <div class="col-md-4">
+          <h3>
+            {{ property.title }}🎈
+          </h3>
+          <h2>
+            {{ property.rooms }}Pieces - {{ property.surface }}m²
+          </h2>
+          <div class="text-primary h3 font-weight-bold">
+            {{ property.FormatedPrice }} $
+          </div>
+          <a class="btn btn-primary" href="">Contactez l'agence</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active"
+          id="nav-home-tab"
+          data-toggle="tab"
+          href="#nav-home"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true">
+          Description
+        </a>
+        <a class="nav-item nav-link"
+          id="nav-profile-tab"
+          data-toggle="tab"
+          href="#nav-profile"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="false">
+          Caratéristique
+        </a>
+        <a class="nav-item nav-link"
+          id="nav-contact-tab"
+          data-toggle="tab"
+          href="#nav-contact"
+          role="tab"
+          aria-controls="nav-contact"
+          aria-selected="false">
+          Options
+        </a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active"
+        id="nav-home"
+        role="tabpanel"
+        aria-labelledby="nav-home-tab">
+        <p class="mt-4">
+          {{ property.description|nl2br }}
+        </p>
+      </div>
+
+      <div class="tab-pane fade mt-3"
+        id="nav-profile"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab">
+        <table class="table table-striped mt-2">
+          <tr>
+            <td>
+              Surface habitable
+            </td>
+            <td>
+              {{ property.surface }}m²
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Le nombre de pieces
+            </td>
+            <td>
+              {{ property.rooms }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Le nombre de chambre
+            </td>
+            <td>
+              {{ property.betrooms }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Etages
+            </td>
+            <td>
+              {{ property.floor }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Le types de chaufage
+            </td>
+            <td>
+              {{ property.heatType }}
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="tab-pane fade"
+        id="nav-contact"
+        role="tabpanel"
+        aria-labelledby="nav-contact-tab">
+        ...
+      </div>
+    </div>
+  </div>
+{% endblock %}

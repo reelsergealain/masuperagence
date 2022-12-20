@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Hello PageController!
+{% endblock %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>
+      Agence Lorem ipsum .
+    </h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, alias?
+    </p>
+  </div>
+  <h3 class="text-center">
+    Les derniers biens
+  </h3>
+  <div class="container">
+    <div class="row flex">
+      {% for property in properties %}
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">
+                <h5>
+                  <a href=" {{path('property.show', {id:property.id, slug:property.slug})}} ">{{ property.title }}</a>
+                </h5>
+              </div>
+              <p class="card-text">
+                {{ property.city }} ({{ property.postalCode }})
+              </p> 
+              <div class="text-primary h2">
+                {{ property.FormatedPrice }} $
+              </div>
+            </div>
+          </div>
+        </div>
+      {% else %}
+
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
